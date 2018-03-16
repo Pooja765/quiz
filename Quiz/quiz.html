@@ -1,0 +1,249 @@
+<html>
+<head>
+  <title>Quiz</title>
+  <script>
+  var correct=0,wrong=0;
+  function validateform(question_num){
+  var quizvalue=document.quiz.q1.value;
+  if (quizvalue==1){
+    document.getElementById("a1"+question_num).style.color = "green";
+ correct++;
+  }else {
+    wrong++
+    document.getElementById(quizvalue+"a"+question_num).style.color = "red";
+  }
+}
+  </script>
+</head>
+<body bgcolor="skyblue">
+  <form id="quiz" name="quiz"><br>
+  <h2 class="quizHeader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Take a Quiz!</h2>
+  <table >
+  <tr>
+    <td>
+      <div>
+        <p class="question">8. Find the name of those cities with temperature and condition whose condition is either sunny or cloudy but temperature must be greater than 70oF.</p>
+        <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(8)">
+          <label id="2a8">SELECT city, temperature, condition FROM weather WHERE condition = 'sunny' AND condition = 'cloudy' OR temperature > 70;</label>
+                <br>
+          <input class="answer" type="radio" name="q1" value="3" onclick="validateform(8)">
+           <label id="3a8" >SELECT city, temperature, condition FROM weather WHERE condition = 'sunny' OR condition = 'cloudy' OR temperature > 70;</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="1" onclick="validateform(8)">
+           <label id="a18" >SELECT city, temperature, condition FROM weather WHERE condition = 'sunny' OR condition = 'cloudy' AND temperature > 70;</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="4" onclick="validateform(8)">
+           <label id="4a8">SELECT city, temperature, condition FROM weather WHERE condition = 'sunny' AND condition = 'cloudy' AND temperature > 70;</label>
+        </ul>
+      </div>
+    </td>
+    </tr>
+    <tr>
+      <div>
+        <p class="question">1. What is an SQL virtual table that is constructed from other tables?</p>
+        <ul>
+          <input class="answer" type="radio" name="q1" value="1" onclick="validateform(1)">
+          <label id="a11">view</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="2" onclick="validateform(1)">
+          <label id="2a1">relation</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="3" onclick="validateform(1)">
+          <label id="3a1">Just another table</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="4" onclick="validateform(1)">
+          <label id="4a1">Query results</label>
+        </ul>
+      </div>
+    </tr>
+  <tr>
+    <td>
+      <div>
+        <p class="question">9. In case of power outage or other system crash, when system restarts, action known to be occur is of</p>
+        <ul>
+          <input class="answer" type="radio" name="q1" value="1" onclick="validateform(9)">
+          <label id="a19">Rollback work</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="2" onclick="validateform(9)">
+          <label id="2a9">Trace work</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="3" onclick="validateform(9)">
+          <label id="3a9">Traceback work</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="4" onclick="validateform(9)">
+          <label id="4a9">Commit work</label>
+        </ul>
+    </div>
+    </td>
+  </tr>
+    <tr>
+      <td>
+      <div>
+        <p class="question">10.&nbsp&nbsp&nbsp&nbsp Table A<br>
+&nbsp&nbsp&nbsp&nbsp Id   Name    Age<br>
+&nbsp&nbsp&nbsp&nbsp ----------------<br>
+&nbsp&nbsp&nbsp&nbsp 12   Arun    60<br>
+&nbsp&nbsp&nbsp&nbsp 15   Shreya  24<br>
+&nbsp&nbsp&nbsp&nbsp 99   Rohit   11<br>
+
+<br>
+&nbsp&nbsp&nbsp&nbsp Table B<br>
+&nbsp&nbsp&nbsp&nbsp Id   Name   Age<br>
+&nbsp&nbsp&nbsp&nbsp ----------------<br>
+&nbsp&nbsp&nbsp&nbsp 15   Shreya  24<br>
+&nbsp&nbsp&nbsp&nbsp 25   Hari    40<br>
+&nbsp&nbsp&nbsp&nbsp 98   Rohit   20<br>
+&nbsp&nbsp&nbsp&nbsp 99   Rohit   11<br>
+<br>
+
+&nbsp&nbsp&nbsp&nbsp Table C<br>
+&nbsp&nbsp&nbsp&nbsp Id   Phone  Area<br>
+&nbsp&nbsp&nbsp&nbsp -----------------<br>
+&nbsp&nbsp&nbsp&nbsp 10   2200   02<br>
+&nbsp&nbsp&nbsp&nbsp 99   2100   01<br>
+&nbsp&nbsp&nbsp&nbsp <br>
+&nbsp&nbsp&nbsp&nbsp Consider the above tables A, B and C. How many tuples does the result of the following SQL query contains?
+
+SELECT A.id
+FROM   A
+WHERE  A.age > ALL (SELECT B.age
+                    FROM   B
+                    WHERE  B. name = "arun") </p>
+        <ul>
+          <input class="answer" type="radio" name="q1" value="2" onclick="validateform(10)">
+          <label id="2a10">4</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="1" onclick="validateform(10)">
+          <label id="a110">3</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="3" onclick="validateform(10)">
+          <label id="3a10">0</label>
+          <br>
+          <input class="answer" type="radio" name="q1" value="4" onclick="validateform(10)">
+          <label id="4a10">1</label>
+        </ul>
+      </div>
+    </td>
+  </tr><tr>
+    <div>
+      <p class="question">2. Any relation that is not part of logical model, but is made visible to a user as a</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(2)">
+        <label id="2a2">Natural relationn</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(2)">
+        <label id="3a2">Absolute relation</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(2)">
+        <label id="a12">Virtual relation
+        </label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(2)">
+        <label id="4a2">Linear relatio</label>
+      </ul>
+    </div>
+  </tr><tr>
+    <div>
+      <p class="question">3. Local date and time without time zone is returned with method</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(3)">
+        <label id="2a3"> timestamp.current</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(3)">
+        <label id="3a3">  current.timestamp</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(3)">
+        <label id="a13">localtimestamp</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(3)">
+        <label id="4a3">system.localtimestamp</label>
+      </ul>
+    </div>
+  </tr><tr>
+    <div>
+      <p class="question">4. The COUNT function in SQL returns the number of ______________</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(4)">
+        <label id="a14">Values</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(4)">
+        <label id="2a4">Distinct values</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(4)">
+        <label id="3a4">Group By</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(4)">
+        <label id="4a4">Columns</label>
+      </ul>
+    </div>
+  </tr><tr>
+    <div>
+      <p class="question">5. The statement that is executed automatically by the system as a side effect of the modification of the database is</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(5)">
+        <label id="2a5">backup</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(5)">
+        <label id="3a5">assertion</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(5)">
+        <label id="4a5">recovery</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(5)">
+        <label id="a15">trigger</label>
+      </ul>
+    </div>
+  </tr><tr>
+    <div>
+      <p class="question">6. The employee information in a company is stored in the relation<br>
+
+&nbsp&nbsp&nbsp&nbsp   Employee (name, sex, salary, deptName)<br>
+
+&nbsp&nbsp&nbsp&nbsp  Consider the following SQL query<br>
+
+&nbsp&nbsp&nbsp&nbsp  select deptName
+         from Employee
+         where sex = 'M'
+         group by deptName
+         &nbsphaving avg (salary) > (select avg (salary) from Employee)<br>
+
+&nbsp&nbsp&nbsp &nbsp It returns the names of the department in which</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(6)">
+        <label id="2a6">the average salary is more than the average salary in the company</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(6)">
+        <label id="3a6">the average salary of male employees is more than the average salary of all male employees in the company</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(6)">
+        <label id="4a6">the average salary of male employees is more than the average salary of employees in the same department</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(6)">
+        <label id="a16">the average salary of male employees is more than the average salary in the company</label>
+      </ul>
+    </div>
+  </tr><tr>
+    <div>
+      <p class="question">7. Which of the following is/are correct?</p>
+      <ul>
+        <input class="answer" type="radio" name="q1" value="2" onclick="validateform(7)">
+        <label id="2a7">An SQL query automatically eliminates the duplicates</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="3" onclick="validateform(7)">
+        <label id="3a7">An SQL query will not work if there are no indexes on the relations</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="4" onclick="validateform(7)">
+        <label id="4a7">SQL permits attribute names to be repeated in the same relation</label>
+        <br>
+        <input class="answer" type="radio" name="q1" value="1" onclick="validateform(7)">
+        <label id="a17">None of the above</label>
+      </ul>
+    </div>
+  </tr>
+  </table>
+<br/>
+<center><b><font color="red" size="6"><br>
+Thank You!!!</font></b></center>
+</form>
+</body>

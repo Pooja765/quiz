@@ -2,17 +2,23 @@
 <head>
   <title>Quiz</title>
   <script>
-  var correct=0,wrong=0;
+  var crt=0;
   function validateform(question_num){
   var quizvalue=document.quiz.q1.value;
   if (quizvalue==1){
+        crt=crt+1;
     document.getElementById("a1"+question_num).style.color = "green";
- correct++;
-  }else {
-    wrong++
+
+  }else {   
+    
     document.getElementById(quizvalue+"a"+question_num).style.color = "red";
+    
   }
-}
+  if(question_num==10)
+  {
+  	alert("You have answered "+crt+" correct out of 10");
+  }
+  }
   </script>
 </head>
 <body bgcolor="skyblue">
